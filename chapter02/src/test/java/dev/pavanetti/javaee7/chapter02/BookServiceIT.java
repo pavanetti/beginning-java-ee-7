@@ -2,29 +2,29 @@ package dev.pavanetti.javaee7.chapter02;
 
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class BookServiceIT {
+class BookServiceIT {
     private WeldContainer container;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         Weld weld = new Weld();
         System.setProperty(Weld.ARCHIVE_ISOLATION_SYSTEM_PROPERTY, "false");
         this.container = weld.initialize();
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         this.container.shutdown();
     }
 
     @Test
-    public void shouldCheckNumberIsMock() {
+    void shouldCheckNumberIsMock() {
         BookService bookService = this.container.select(BookService.class).get();
         Book book = bookService.createBook("H2G2", 12.5f, "Geeky sci-fi Book");
 

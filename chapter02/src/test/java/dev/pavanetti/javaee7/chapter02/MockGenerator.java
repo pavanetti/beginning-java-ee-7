@@ -1,7 +1,8 @@
 package dev.pavanetti.javaee7.chapter02;
 
-import javax.enterprise.inject.Alternative;
-import javax.inject.Inject;
+import jakarta.enterprise.inject.Alternative;
+import jakarta.inject.Inject;
+
 import java.util.logging.Logger;
 
 @Alternative

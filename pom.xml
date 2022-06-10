@@ -22,13 +22,13 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <!-- Java EE -->
     <version.jakartaee>9.1.0</version.jakartaee>
-    <version.weld>2.4.8.Final</version.weld>
+    <version.weld>5.0.0.SP2</version.weld>
 
     <!--  Test  -->
     <skipTests>false</skipTests>
     <skipITs>${skipTests}</skipITs>
     <skipUTs>${skipTests}</skipUTs>
-    <version.junit>4.13.2</version.junit>
+    <version.junit>5.8.2</version.junit>
 
     <!-- Maven Plugins -->
     <version.maven.compiler.plugin>3.1</version.maven.compiler.plugin>
@@ -50,16 +50,17 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
       <!-- CDI -->
       <dependency>
         <groupId>org.jboss.weld.se</groupId>
-        <artifactId>weld-se</artifactId>
+        <artifactId>weld-se-shaded</artifactId>
         <version>${version.weld}</version>
       </dependency>
 
       <!-- Test -->
       <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
         <version>${version.junit}</version>
-        <scope>test</scope>
+        <scope>import</scope>
+        <type>pom</type>
       </dependency>
     </dependencies>
   </dependencyManagement>

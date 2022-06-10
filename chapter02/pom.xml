@@ -10,20 +10,20 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <name>02 - CDI (Putting It All Together)</name>
 
   <parent>
-    <groupId>dev.pavanetti.javaee7</groupId>
     <artifactId>parent</artifactId>
+    <groupId>dev.pavanetti.javaee7</groupId>
     <version>1.0</version>
   </parent>
 
   <dependencies>
     <dependency>
       <groupId>org.jboss.weld.se</groupId>
-      <artifactId>weld-se</artifactId>
+      <artifactId>weld-se-shaded</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
     </dependency>
   </dependencies>
 

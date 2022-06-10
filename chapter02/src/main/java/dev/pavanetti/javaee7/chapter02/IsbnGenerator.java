@@ -1,6 +1,7 @@
 package dev.pavanetti.javaee7.chapter02;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
+
 import java.util.Random;
 import java.util.logging.Logger;
 
