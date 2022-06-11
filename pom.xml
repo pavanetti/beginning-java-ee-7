@@ -12,6 +12,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modules>
     <module>chapter02</module>
+    <module>chapter03</module>
   </modules>
 
   <properties>
@@ -23,6 +24,8 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <!-- Java EE -->
     <version.jakartaee>9.1.0</version.jakartaee>
     <version.weld>5.0.0.SP2</version.weld>
+    <version.hibernate.validator>7.0.4.Final</version.hibernate.validator>
+    <version.el>4.0.2</version.el>
 
     <!--  Test  -->
     <skipTests>false</skipTests>
@@ -52,6 +55,20 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
         <groupId>org.jboss.weld.se</groupId>
         <artifactId>weld-se-shaded</artifactId>
         <version>${version.weld}</version>
+      </dependency>
+
+      <!-- Bean Validator -->
+      <dependency>
+        <groupId>org.hibernate.validator</groupId>
+        <artifactId>hibernate-validator</artifactId>
+        <version>${version.hibernate.validator}</version>
+      </dependency>
+
+      <!-- EL -->
+      <dependency>
+        <groupId>org.glassfish</groupId>
+        <artifactId>jakarta.el</artifactId>
+        <version>${version.el}</version>
       </dependency>
 
       <!-- Test -->
@@ -97,7 +114,9 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
         </executions>
       </plugin>
     </plugins>
+
     <pluginManagement>
+      <!-- Apache -->
       <plugins>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -115,6 +134,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
           </configuration>
         </plugin>
 
+        <!-- Codehaus -->
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>exec-maven-plugin</artifactId>
