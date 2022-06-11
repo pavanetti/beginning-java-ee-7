@@ -27,6 +27,8 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <version.hibernate.validator>7.0.4.Final</version.hibernate.validator>
     <version.el>4.0.2</version.el>
 
+    <version.immutables>2.9.0</version.immutables>
+
     <!--  Test  -->
     <skipTests>false</skipTests>
     <skipITs>${skipTests}</skipITs>
@@ -34,7 +36,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <version.junit>5.8.2</version.junit>
 
     <!-- Maven Plugins -->
-    <version.maven.compiler.plugin>3.1</version.maven.compiler.plugin>
+    <version.maven.compiler.plugin>3.10.1</version.maven.compiler.plugin>
     <version.maven.help.plugin>2.2</version.maven.help.plugin>
     <version.maven.exec.plugin>3.0.0</version.maven.exec.plugin>
     <version.maven.surefire.plugin>2.16</version.maven.surefire.plugin>
@@ -69,6 +71,14 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
         <groupId>org.glassfish</groupId>
         <artifactId>jakarta.el</artifactId>
         <version>${version.el}</version>
+      </dependency>
+
+      <!-- Immutables -->
+      <dependency>
+        <groupId>org.immutables</groupId>
+        <artifactId>value</artifactId>
+        <version>${version.immutables}</version>
+        <scope>provided</scope>
       </dependency>
 
       <!-- Test -->
@@ -129,8 +139,10 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
           <version>${version.maven.compiler.plugin}</version>
           <inherited>true</inherited>
           <configuration>
+            <compilerVersion>${version.java}</compilerVersion>
             <source>${version.java}</source>
             <target>${version.java}</target>
+            <useIncrementalCompilation>false</useIncrementalCompilation>
           </configuration>
         </plugin>
 

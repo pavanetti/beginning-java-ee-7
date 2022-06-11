@@ -28,6 +28,6 @@ class BookServiceIT {
         BookService bookService = this.container.select(BookService.class).get();
         Book book = bookService.createBook("H2G2", 12.5f, "Geeky sci-fi Book");
 
-        assertTrue(book.getNumber().startsWith("MOCK"));
+        assertTrue(book.number().startsWith("MOCK"));
     }
 }

@@ -1,53 +1,24 @@
 package dev.pavanetti.javaee7.chapter03;
 
 import jakarta.validation.constraints.NotNull;
+import org.immutables.value.Value;
 
-public class Address {
-    @NotNull
-    private final String street1;
+import java.util.Optional;
 
-    private String street2;
+@Value.Immutable
+public interface Address {
+    @NotNull String street1();
 
-    @NotNull
-    private final String city;
+    Optional<String> street2();
 
-    private final String state;
+    @NotNull String city();
+
+    String state();
 
     @NotNull
     @ZipCode
-    private final String zipcode;
+    String zipcode();
 
-    private final String country;
+    String country();
 
-    public Address(String street1, String city, String state, String zipcode, String country) {
-        this.street1 = street1;
-        this.city = city;
-        this.state = state;
-        this.zipcode = zipcode;
-        this.country = country;
-    }
-
-    public String getStreet1() {
-        return street1;
-    }
-
-    public String getStreet2() {
-        return street2;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public String getZipcode() {
-        return zipcode;
-    }
-
-    public String getCountry() {
-        return country;
-    }
 }

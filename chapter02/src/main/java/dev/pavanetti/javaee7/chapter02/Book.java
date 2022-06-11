@@ -1,40 +1,15 @@
 package dev.pavanetti.javaee7.chapter02;
 
-public class Book {
-    private final String title;
-    private final float price;
-    private final String description;
-    private final String number;
+import org.immutables.value.Value;
 
-    // ======================================
-    // =            Constructors            =
-    // ======================================
-    public Book(String title, float price, String description, String number) {
-        this.title = title;
-        this.price = price;
-        this.description = description;
-        this.number = number;
-    }
+@Value.Immutable
+public interface Book {
+    String title();
 
-    // ======================================
-    // =          Getters & Setters         =
-    // ======================================
+    float price();
 
-    public String getNumber() {
-        return number;
-    }
+    String description();
 
-    // ======================================
-    // =         hash, equals, toString     =
-    // ======================================
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "title='" + title + '\'' +
-                ", price=" + price +
-                ", description='" + description + '\'' +
-                ", number='" + number + '\'' +
-                '}';
-    }
+    String number();
 }
+

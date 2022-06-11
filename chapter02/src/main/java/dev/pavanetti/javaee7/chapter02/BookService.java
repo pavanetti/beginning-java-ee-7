@@ -8,6 +8,11 @@ public class BookService {
     private NumberGenerator numberGenerator;
 
     public Book createBook(String title, float price, String description) {
-        return new Book(title, price, description, this.numberGenerator.generateNumber());
+        return ImmutableBook.builder()
+                .title(title)
+                .price(price)
+                .description(description)
+                .number(this.numberGenerator.generateNumber())
+                .build();
     }
 }
