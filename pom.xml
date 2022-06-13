@@ -13,6 +13,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modules>
     <module>chapter02</module>
     <module>chapter03</module>
+    <module>chapter04</module>
   </modules>
 
   <properties>
@@ -24,8 +25,12 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <!-- Java EE -->
     <version.jakartaee>9.1.0</version.jakartaee>
     <version.weld>5.0.0.SP2</version.weld>
+    <version.hibernate.core>6.1.0.Final</version.hibernate.core>
     <version.hibernate.validator>7.0.4.Final</version.hibernate.validator>
     <version.el>4.0.2</version.el>
+
+    <!-- Databases -->
+    <version.derby>10.15.2.0</version.derby>
 
     <version.immutables>2.9.0</version.immutables>
 
@@ -71,6 +76,30 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
         <groupId>org.glassfish</groupId>
         <artifactId>jakarta.el</artifactId>
         <version>${version.el}</version>
+      </dependency>
+
+      <!-- JPA -->
+      <dependency>
+        <groupId>org.hibernate.orm</groupId>
+        <artifactId>hibernate-core</artifactId>
+        <version>${version.hibernate.core}</version>
+      </dependency>
+
+      <!-- Derby -->
+      <dependency>
+        <groupId>org.apache.derby</groupId>
+        <artifactId>derby</artifactId>
+        <version>${version.derby}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.derby</groupId>
+        <artifactId>derbyclient</artifactId>
+        <version>${version.derby}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.derby</groupId>
+        <artifactId>derbytools</artifactId>
+        <version>${version.derby}</version>
       </dependency>
 
       <!-- Immutables -->
